@@ -1,0 +1,82 @@
+@import "mixines"
+@media (max-width: 1199.98px)
+	.joke-finder
+		padding: 40px
+@media (max-width: 991.98px)
+	.main-wrapper
+		display: block
+		position: relative
+		overflow: auto
+	.joke-finder
+		& .hamburger
+			display: flex
+			position: absolute
+			right: 40px
+			top: 40px
+			z-index: 3
+			cursor: pointer
+			&__circle
+				position: relative
+				margin-right: 10px
+				width: 28px
+				height: 28px
+				border-radius: 50%
+				background-color: #333333
+				
+				&:before
+					@include burger-line
+				&:after
+					@include burger-line
+					top: 16px
+			&--active
+				& .hamburger__circle
+					&:before
+						transform: translateY(3px) rotate(-45deg)
+					&:after
+						transform: translateY(-3px) rotate(45deg)
+		&--not-active
+			&:after
+				display: block
+				content: ""
+				position: fixed
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background-color: rgba(0,0,0,0.3);
+				z-index: 1
+				cursor: pointer
+
+	.favourite
+		position: fixed
+		right: 0
+		top: 0
+		transition: all 0.5s
+		& > .favourite__subtitle
+			display: none
+		&--hidden
+			z-index: 2
+			right: -200%
+	.joke-block
+		margin-top: 40px
+		padding: 20px
+		& .joke-wrapper 
+			& .joke 
+				& .update-wrapper
+					flex-direction: column
+				&__categorie
+					margin-top: 10px
+					margin-left: 0
+					margin-right: auto
+
+@media (max-width: 575.98px)
+	.joke-finder
+		padding: 20px
+		& .hamburger
+			right: 20px
+			top: 20px
+	.favourite
+		width: 100%
+		padding: 20px

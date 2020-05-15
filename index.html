@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Joke Finder</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <section class="joke-finder">
+            <h1 class="joke-finder__title">MSI 2020</h1>
+            <div class="hamburger hamburger--active">
+                <div class="hamburger__circle"></div>
+                <h2 class="favourite__subtitle">Favourite</h2>
+            </div>
+            <h2 class="joke-finder__greetings">Hey!</h2>
+            <h3 class="joke-finder__subtitle">Let’s try to find a joke for you:</h3>
+
+            <form class="form">
+                <label>Random
+                    <input class="form__old-radio" type="radio" name="option"/> 
+                    <span class="form__new-radio"></span>
+                </label>
+                <div class="categories">
+                    <label>From caterogies
+                        <input class="form__old-radio" type="radio" name="option"/> 
+                        <span class="form__new-radio"></span>
+                    </label>
+                    <div class="categorie-labels">
+                        <div class="categorie-labels__item">animal</div>
+                        <div class="categorie-labels__item">career</div>
+                        <div class="categorie-labels__item">celebrity</div>
+                        <div class="categorie-labels__item">dev</div>
+                    </div>
+                </div>
+                <div class="search">
+                    <label>Search
+                        <input class="form__old-radio" type="radio" name="option"/>
+                        <span class="form__new-radio"></span>
+                    </label>
+                    <input class="search__input" type="text" value="Free text search...">
+                </div>
+                <button class="form__get-btn">Get a joke</button>
+            </form>
+
+            <div class="joke-block">
+                <div class="joke-block__heart"><img src="icon/heart-not-filled.svg" alt="Add to favourite" ></div>
+                <div class="joke-wrapper">
+                    <div class="message">
+                        <div class="message__circle"><img src="icon/message.svg" alt="Message icon"></div>
+                    </div>
+                    <div class="joke">
+                        <div class="joke__id">ID: <a href="#">XNaAxUduSw6zANDaIEab7A</a></div>
+                        <p class="joke__text">No one truly knows who's Chuck Norris' real father. No one is biologically
+                            strong enough for this. He must've conceived himself.</p>
+                        <div class="update-wrapper">
+                            <div class="joke__update">Last update: 1923 hours ago</div>
+                            <div class="joke__categorie">celebrity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="favourite ">
+            <h2 class="favourite__subtitle">Favourite</h2>
+            <div class="joke-block joke-block--small joke-block--white">
+                <div class="joke-block__heart"><img src="icon/heart-not-filled.svg" alt="Add to favourite"></div>
+                <div class="joke-wrapper">
+                    <div class="message">
+                        <div class="message__circle"><img src="icon/message.svg" alt="Message icon"></div>
+                    </div>
+                    <div class="joke">
+                        <div class="joke__id">ID: <a href="#">XNaAxUduSw6zANDaIEab7A</a></div>
+                        <p class="joke__text">No one truly knows who's Chuck Norris' real father. No one is biologically
+                            strong enough for this. He must've conceived himself.</p>
+                        <div class="joke__update">Last update: 1923 hours ago</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
