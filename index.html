@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Joke Finder</title>
@@ -22,34 +22,34 @@
             <h3 class="joke-finder__subtitle">Let’s try to find a joke for you:</h3>
 
             <form class="form">
-                <label>Random
-                    <input class="form__old-radio" type="radio" name="option"/> 
-                    <span class="form__new-radio"></span>
-                </label>
-                <div class="categories">
-                    <label>From caterogies
-                        <input class="form__old-radio" type="radio" name="option"/> 
-                        <span class="form__new-radio"></span>
-                    </label>
-                    <div class="categorie-labels">
-                        <div class="categorie-labels__item">animal</div>
-                        <div class="categorie-labels__item">career</div>
-                        <div class="categorie-labels__item">celebrity</div>
-                        <div class="categorie-labels__item">dev</div>
+                <label class="radio">Random
+                    <input class="radio__old-radio" type="radio" name="option" id="random-opt" checked/> 
+                    <span class="radio__new-radio"></span>
+                </label class="radio">
+                <div class="categories" >
+                    <label class="radio">From caterogies
+                        <input class="radio__old-radio" type="radio" name="option" id="categories-opt"/> 
+                        <span class="radio__new-radio"></span>
+                    </label class="radio">
+                    <div class="categories-labels categories-labels--hidden" id="categories-labels">
+                        <div class="categories-labels__item">animal</div>
+                        <div class="categories-labels__item">career</div>
+                        <div class="categories-labels__item">celebrity</div>
+                        <div class="categories-labels__item">dev</div>
                     </div>
                 </div>
-                <div class="search">
-                    <label>Search
-                        <input class="form__old-radio" type="radio" name="option"/>
-                        <span class="form__new-radio"></span>
-                    </label>
-                    <input class="search__input" type="text" value="Free text search...">
+                <div class="search" id="search">
+                    <label class="radio">Search
+                        <input class="radio__old-radio" type="radio" name="option" id="search-opt"/>
+                        <span class="radio__new-radio"></span>
+                    </label class="radio">
+                    <input class="search__input search__input--hidden" type="text" placeholder="Free text search..." id="search-input"/>
                 </div>
                 <button class="form__get-btn">Get a joke</button>
             </form>
 
-            <div class="joke-block">
-                <div class="joke-block__heart"><img src="icon/heart-not-filled.svg" alt="Add to favourite" ></div>
+            <div class="joke-block" >
+                <div id="heart-n-filled" class="joke-block__heart"><img src="icon/not-filled-heart.svg" alt="Add to favourite" ></div>
                 <div class="joke-wrapper">
                     <div class="message">
                         <div class="message__circle"><img src="icon/message.svg" alt="Message icon"></div>
@@ -67,24 +67,16 @@
             </div>
         </section>
 
-        <section class="favourite ">
+        <section class="favourite" id="favourite">
             <h2 class="favourite__subtitle">Favourite</h2>
-            <div class="joke-block joke-block--small joke-block--white">
-                <div class="joke-block__heart"><img src="icon/heart-not-filled.svg" alt="Add to favourite"></div>
-                <div class="joke-wrapper">
-                    <div class="message">
-                        <div class="message__circle"><img src="icon/message.svg" alt="Message icon"></div>
-                    </div>
-                    <div class="joke">
-                        <div class="joke__id">ID: <a href="#">XNaAxUduSw6zANDaIEab7A</a></div>
-                        <p class="joke__text">No one truly knows who's Chuck Norris' real father. No one is biologically
-                            strong enough for this. He must've conceived himself.</p>
-                        <div class="joke__update">Last update: 1923 hours ago</div>
-                    </div>
-                </div>
-            </div>
+            <ul></ul>
         </section>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/addToFav.js"></script>
+    <!-- <script type="text/javascript" src="js/removeFromFav.js"></script> -->
+    <script type="text/javascript" src="js/radioSelection.js"></script>
 </body>
 
 </html>
