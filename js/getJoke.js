@@ -9,21 +9,24 @@ function init(){
 
 function btnClickHendler(){
     $checked = $('.radio input[type="radio"]:checked');
+    getJoke()
 }
 
 function getJoke(){
     url = "//api.chucknorris.io/jokes/random" 
-    var getJoke = $.ajax({
+    $.ajax({
         url: url,
-        type: "GET", 
-        data: {},
-        dataType: "json",
-        jsonp: "callback"
+        type: "GET",
     });
-    jqxhr.done(successHandler);
+    jqxhr.done(function( msg ) {
+        
+          alert( "Data Saved: " + msg );
+        
+        });
+        
     jqxhr.fail(failureHandler);
 }
 
 function successHandler(){
-    alert(data)
+    alert(msg)
 }

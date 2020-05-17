@@ -8,7 +8,7 @@ function init(){
 }
 
 function addToFavHendler(){
-    animate("animate__heartBeat", $heart, "../icon/filled-heart.svg")
+    animate("animate__heartBeat", $heart, "icon/filled-heart.svg")
     addToFav()
     $filledHeart = $("#heart-filled")
     $($filledHeart).on('click', removeFromFavHendler);
@@ -48,7 +48,7 @@ function animate(animation, $heart, src){
 
 // Remove from joke from favourite block and local storage
 function removeFromFavHendler(){
-    animate("animate__heartBeat", $filledHeart, "../icon/not-filled-heart.svg")
+    animate("animate__heartBeat", $filledHeart, "icon/not-filled-heart.svg")
     $("#joke1").addClass("animate__animated animate__backOutRight").one(animationend, function(){
         $(this).remove()
     });
