@@ -17,12 +17,14 @@ html, body
 		font-weight: 700
 		font-size: 32px
 		line-height: 44px
-	&__subtitle
-		font-weight: 500
-		font-size: 24px
-	& .hamburger
-		display: none
-
+	.hamburger-wrapper
+		display: flex
+		justify-content: space-between
+.hamburger
+	cursor: pointer
+	display: none
+	
+			
 
 .form
 	margin-top: 33px
@@ -33,12 +35,14 @@ html, body
 		font-size: 18px
 		position: relative
 		cursor: pointer
+		// Remove default radio
 		.radio__old-radio
 			position: absolute
 			opacity: 0
 			cursor: pointer
 			height: 0
 			width: 0
+		// Add new radio
 		.radio__new-radio
 			position: absolute
 			top: 4px
@@ -47,6 +51,7 @@ html, body
 			width: 20px
 			border: 2px solid $light-font
 			border-radius: 50%
+			// Style Dot
 			&:after
 				content: ""
 				position: absolute
@@ -57,11 +62,14 @@ html, body
 				height: 10px
 				border-radius: 50%
 				background: $primary-dark-c
+		// On hover change color of border
 		&:hover .radio__new-radio 
 			border: 2px solid $primary-dark-c
-		& input:checked ~ .radio__new-radio
+		// On checked apply color of border
+		input:checked ~ .radio__new-radio
 			border: 2px solid $primary-dark-c
-		& input:checked ~ .radio__new-radio:after 
+		// On checked dot
+		input:checked ~ .radio__new-radio:after 
 		  	display: block
 
 	&__get-btn
@@ -101,7 +109,7 @@ html, body
 			letter-spacing: 2px
 			text-transform: uppercase
 			color: $light-font
-			transition: all 0.6s
+			transition: all 0.5s
 			&:focus, &:hover
 				background: $primary-light-c
 				color: $primary-dark-c
@@ -139,10 +147,11 @@ html, body
 		img
 			display: block
 			margin-left: auto
-	& .joke-wrapper
+	// Wrap message icon and text in one line
+	.joke-wrapper
 		margin-top: 10px
 		display: flex
-		& .message
+		.message
 			margin-right: 20px
 			&__circle
 				display: flex
@@ -152,9 +161,8 @@ html, body
 				height: 40px
 				background-color: #FFFFFF
 				border-radius: 50%
-		& .joke
+		.joke
 			&__id
-				
 				font-weight: 500
 				font-size: 10px
 				color: $light-font
@@ -162,6 +170,7 @@ html, body
 					text-decoration: underline
 					color: $secondary-c
 					word-break: break-all
+					// Add icon at the end of link
 					&:after
 						display: inline-block
 						content: ""
@@ -173,6 +182,7 @@ html, body
 				margin-top: 5px
 				font-weight: 400
 				font-size: 18px
+			// Wrap update and categorie in one line
 			& .update-wrapper
 				display: flex
 				margin-top: 20px
@@ -190,11 +200,13 @@ html, body
 				font-size: 10px
 				letter-spacing: 2px
 				text-transform: uppercase
+	// Smal version of joke-block (for favourite)
 	&--small
 		padding: 20px
 		border-radius: 10px
 		.joke .joke__text
 			font-size: 14px
+	// White version of joke-block (for favourite)
 	&--white
 		background-color: #FFFFFF
 		border: 1px solid #F8F8F8
@@ -213,4 +225,6 @@ html, body
 		font-weight: 500
 		font-size: 20px
 		color: $light-font
+	.hamburger
+		display: none
 

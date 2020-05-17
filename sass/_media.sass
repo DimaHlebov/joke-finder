@@ -7,33 +7,12 @@
 		display: block
 		position: relative
 		overflow: auto
+	// Add hamburger for tablet and lower dimensions
 	.joke-finder
-		& .hamburger
-			display: flex
-			position: absolute
-			right: 40px
-			top: 40px
-			z-index: 3
-			cursor: pointer
-			&__circle
-				position: relative
-				margin-right: 10px
-				width: 28px
-				height: 28px
-				border-radius: 50%
-				background-color: #333333
-				
-				&:before
-					@include burger-line
-				&:after
-					@include burger-line
-					top: 16px
-			&--active
-				& .hamburger__circle
-					&:before
-						transform: translateY(3px) rotate(-45deg)
-					&:after
-						transform: translateY(-3px) rotate(45deg)
+		.hamburger-wrapper
+			.hamburger
+				display: flex
+		// Black overlay. When menu is active
 		&--not-active
 			&:after
 				display: block
@@ -48,22 +27,56 @@
 				background-color: rgba(0,0,0,0.3);
 				z-index: 1
 				cursor: pointer
+				opacity: 1
+	.hamburger
+		&__circle
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			margin-right: 10px
+			width: 28px
+			height: 28px
+			border-radius: 50%
+			background-color: #333333
+			// Two lines of haburger (in file __mixines.sass)
+			span:nth-child(1)
+				@include burger-line
+				transition: all .2s
+				margin-top: 0
+			span:nth-child(2)
+				@include burger-line
+				transition: all .2s
+		// Modifier for active state of hamburger (line crossed)
+		&--active
+			.hamburger__circle
+				span:nth-child(1)
+					transform: translateY(3.25px) rotate(-45deg)
+				span:nth-child(2)
+					transform: translateY(-3.25px) rotate(45deg)
 
 	.favourite
 		position: fixed
 		right: 0
 		top: 0
 		transition: all 0.5s
+		z-index: 2
+		overflow: auto
+		.hamburger
+			display: flex
+			margin-left: auto
+			justify-content: flex-end
+		// Remove favourite subtitle
 		& > .favourite__subtitle
 			display: none
+		// Hide favourite block
 		&--hidden
-			z-index: 2
 			right: -200%
 	.joke-block
 		margin-top: 40px
 		padding: 20px
-		& .joke-wrapper 
-			& .joke 
+		.joke-wrapper 
+			.joke 
 				& .update-wrapper
 					flex-direction: column
 				&__categorie
@@ -74,9 +87,6 @@
 @media (max-width: 575.98px)
 	.joke-finder
 		padding: 20px
-		& .hamburger
-			right: 20px
-			top: 20px
 	.favourite
 		width: 100%
 		padding: 20px

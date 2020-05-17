@@ -4,16 +4,16 @@ var $filledHeart;
 var animationend = "animationend webkitAnimationEnd oanimationend MSAnimationEnd"; 
 function init(){
     $heart = $("#heart-n-filled")
-   .on("click", addToFavListener);
+    $heart.on("click", addToFavHendler);
 }
 
-function addToFavListener(){
+function addToFavHendler(){
     animate("animate__heartBeat", $heart, "../icon/filled-heart.svg")
     addToFav()
     $filledHeart = $("#heart-filled")
-    $($filledHeart).on('click', removeFromFavListener);
+    $($filledHeart).on('click', removeFromFavHendler);
 }
-
+// Append joke to favourite block and store in local storage
 function addToFav(){
     var htmlJoke = '<div id="joke1" class="joke-block joke-block--small joke-block--white animate__animated animate__backInRight">' +
                     '<div class="joke-block__heart" id="heart-filled"><img src="icon/filled-heart.svg" alt="Add to favourite"></div>' +
@@ -31,8 +31,8 @@ function addToFav(){
                 '</div>';
     $(htmlJoke).appendTo(".favourite").show();
 }
-    
 
+// Change picture of heart (filled, not filled) and animate
 function animate(animation, $heart, src){
     var $image = $heart.find("img")
     
@@ -46,7 +46,8 @@ function animate(animation, $heart, src){
     }
 }
 
-function removeFromFavListener(){
+// Remove from joke from favourite block and local storage
+function removeFromFavHendler(){
     animate("animate__heartBeat", $filledHeart, "../icon/not-filled-heart.svg")
     $("#joke1").addClass("animate__animated animate__backOutRight").one(animationend, function(){
         $(this).remove()
