@@ -26,23 +26,20 @@
             <h2 class="joke-finder__greetings">Hey!</h2>
             <h3 class="joke-finder__subtitle">Let’s try to find a joke for you:</h3>
             <!-- Joke generator form -->
-            <form class="form">
+            <div class="form">
                 <!-- Random joke -->
                 <label class="radio">Random
                     <input class="radio__old-radio" type="radio" name="option" id="random-opt" checked/> 
                     <span class="radio__new-radio"></span>
                 </label class="radio">
-                <!-- Joke from categorie -->
+                <!-- Joke from category -->
                 <div class="categories" >
                     <label class="radio">From caterogies
                         <input class="radio__old-radio" type="radio" name="option" id="categories-opt"/> 
                         <span class="radio__new-radio"></span>
                     </label class="radio">
                     <div class="categories-labels categories-labels--hidden" id="categories-labels">
-                        <div class="categories-labels__item">animal</div>
-                        <div class="categories-labels__item">career</div>
-                        <div class="categories-labels__item">celebrity</div>
-                        <div class="categories-labels__item">dev</div>
+
                     </div>
                 </div>
                 <!-- Search joke by request -->
@@ -53,26 +50,13 @@
                     </label class="radio">
                     <input class="search__input search__input--hidden" type="text" placeholder="Free text search..." id="search-input"/>
                 </div>
-                <button id="get-btn" class="form__get-btn">Get a joke</button>
-            </form>
-            <!-- Found jokes -->
-            <div class="joke-block" >
-                <div id="heart-n-filled" class="joke-block__heart"><img src="icon/not-filled-heart.svg" alt="Add to favourite" ></div>
-                <div class="joke-wrapper">
-                    <div class="message">
-                        <div class="message__circle"><img src="icon/message.svg" alt="Message icon"></div>
-                    </div>
-                    <div class="joke">
-                        <div class="joke__id">ID: <a href="#">XNaAxUduSw6zANDaIEab7A</a></div>
-                        <p class="joke__text">No one truly knows who's Chuck Norris' real father. No one is biologically
-                            strong enough for this. He must've conceived himself.</p>
-                        <div class="update-wrapper">
-                            <div class="joke__update">Last update: 1923 hours ago</div>
-                            <div class="joke__categorie">celebrity</div>
-                        </div>
-                    </div>
-                </div>
+                <button id="get-btn" class="form__get-btn" type="button">Get a joke</button>
             </div>
+            <!-- Found jokes -->
+            <div id="found-jokes" class="found-jokes">
+
+            </div>
+           
         </section>
         <!-- Favourite jokes -->
         <section class="favourite favourite--hidden" id="favourite">
@@ -81,15 +65,15 @@
                 <div class="hamburger__circle"><span></span><span></span></div>
                 <div class="favourite__subtitle">Favourite</div>
             </div>
-            <ul></ul>
         </section>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
-    <script type="text/javascript" src="js/addRemoveJoke.js"></script>
+    <script type="text/javascript" src="js/populatecategories.js"></script>
+    <script type="module" src="js/populateFav.js"></script>
     <script type="text/javascript" src="js/radioSelection.js"></script>
     <script type="text/javascript" src="js/hamburger.js"></script>
-    <script type="text/javascript" src="js/getJoke.js"></script>
+    <script type="module" src="js/getJoke.js"></script>
+   
 </body>
 
 </html>

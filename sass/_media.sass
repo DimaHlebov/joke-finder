@@ -4,9 +4,9 @@
 		padding: 40px
 @media (max-width: 991.98px)
 	.main-wrapper
+		overflow-y: hidden
 		display: block
 		position: relative
-		overflow: auto
 	// Add hamburger for tablet and lower dimensions
 	.joke-finder
 		.hamburger-wrapper
@@ -51,9 +51,9 @@
 		&--active
 			.hamburger__circle
 				span:nth-child(1)
-					transform: translateY(3.25px) rotate(-45deg)
+					transform: translateY(3px) rotate(-45deg)
 				span:nth-child(2)
-					transform: translateY(-3.25px) rotate(45deg)
+					transform: translateY(-3px) rotate(45deg)
 
 	.favourite
 		position: fixed
@@ -72,14 +72,14 @@
 		// Hide favourite block
 		&--hidden
 			right: -200%
-	.joke-block
+	.found-jokes .joke-block
 		margin-top: 40px
 		padding: 20px
 		.joke-wrapper 
 			.joke 
 				& .update-wrapper
 					flex-direction: column
-				&__categorie
+				&__category
 					margin-top: 10px
 					margin-left: 0
 					margin-right: auto

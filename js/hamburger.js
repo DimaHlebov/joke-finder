@@ -1,26 +1,20 @@
-$(init);
-var $hamburger, $jokeFinder, $favourite;
-function init(){
-    $hamburger = $(".hamburger");
-    $jokeFinder = $("#joke-finder");
-    $favourite = $("#favourite");
-    $hamburger.on("click", hamburgerHendler);
-    
-}
+$(function(){
+    $(".hamburger").on("click", hamburgerHandler);
+});
 
-function hamburgerHendler(){
+function hamburgerHandler(){
     toggleFav()
-    $("body").on("click", closeFavHendler);
+    $("body").on("click", closeFavHandler);
 }
 // Check if class of click = out of the favourite block then close favourite block
-function closeFavHendler(e){
-    if(e.target.className == "joke-finder joke-finder--not-active"){
+function closeFavHandler(e){
+    if(e.target.className === "joke-finder joke-finder--not-active"){
         toggleFav()
     }
 }
 // Open or close favourite block
 function toggleFav(){
-    $hamburger.toggleClass("hamburger--active");
-    $jokeFinder.toggleClass("joke-finder--not-active");
-    $favourite.toggleClass("favourite--hidden")
+    $(".hamburger").toggleClass("hamburger--active");
+    $("#joke-finder").toggleClass("joke-finder--not-active");
+    $("#favourite").toggleClass("favourite--hidden")
 }
