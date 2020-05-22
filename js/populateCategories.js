@@ -7,6 +7,7 @@ function populateCategories(){
         dataType: "json"
      }).done(function(data){
          let i = 0;
+         console.log(data)
          data.forEach(element => {
              let category = '<input type="radio" id="radio'+i+'" name="radios"/><label class="categories-labels__item" for="radio'+i+'">'+element+'</label>'
              $(category).appendTo("#categories-labels");

@@ -20,7 +20,6 @@ export class Joke{
         let jokeStyle = "animate__animated animate__backInLeft";
         let id = ""
         let img = this.#notFilledHeart
-        console.log(this.#notFilledHeart)
         if(isFav === false){
             if(typeof this.category !== undefined && this.category.length > 0){
                 domCategory = `<div class="joke__category">${this.category[0]}</div>`;
