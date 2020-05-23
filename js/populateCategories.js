@@ -1,5 +1,6 @@
 $(populateCategories);
 function populateCategories(){
+    $.ajaxSetup({ cache: false });
     let url = "https://api.chucknorris.io/jokes/categories"
     $.ajax({
         type: 'GET',
