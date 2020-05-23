@@ -34,7 +34,7 @@ function getJoke(param = "random"){
         dataType: "json"
      }).done(function(data){
         // Create object Joke and add to global array
-        // Chek if json has attribute result, if not it's has arrays of jokes
+        // Chek if json has attribute result, if not it's has an array of jokes
         if(data.result === undefined){
            appendJoke(data)
         }else{
