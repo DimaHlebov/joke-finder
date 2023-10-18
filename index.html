@@ -4,38 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Joke Generator</title>
 </head>
 
 <body>
-   
+
     <div class="main-wrapper">
         <!-- Main block. Joke Generator -->
         <section id="joke-finder" class="joke-finder">
             <!-- Titles -->
             <div class="hamburger-wrapper">
-                <h1 class="joke-finder__title">MSI 2020</h1>
+                <a href="/"><img src="/icon/chucknorris.png" width="150"></a>
                 <div class="hamburger">
                     <div class="hamburger__circle"><span></span><span></span></div>
                     <div class="favourite__subtitle">Favourite</div>
                 </div>
             </div>
-            <h2 class="joke-finder__greetings">Hey!</h2>
+            <h1 class="joke-finder__greetings">Chuck Norris Approves!</h1>
             <h3 class="joke-finder__subtitle">Let’s try to find a joke for you:</h3>
             <!-- Joke generator form -->
             <div class="form">
                 <!-- Random joke -->
                 <label class="radio">Random
-                    <input class="radio__old-radio" type="radio" name="option" id="random-opt" checked/> 
+                    <input class="radio__old-radio" type="radio" name="option" id="random-opt" checked />
                     <span class="radio__new-radio"></span>
                 </label class="radio">
                 <!-- Joke from category -->
-                <div class="categories" >
+                <div class="categories">
                     <label class="radio">From caterogies
-                        <input class="radio__old-radio" type="radio" name="option" id="categories-opt"/> 
+                        <input class="radio__old-radio" type="radio" name="option" id="categories-opt" />
                         <span class="radio__new-radio"></span>
                     </label class="radio">
                     <div class="categories-labels categories-labels--hidden" id="categories-labels">
@@ -45,10 +45,11 @@
                 <!-- Search joke by request -->
                 <div class="search" id="search">
                     <label class="radio">Search
-                        <input class="radio__old-radio" type="radio" name="option" id="search-opt"/>
+                        <input class="radio__old-radio" type="radio" name="option" id="search-opt" />
                         <span class="radio__new-radio"></span>
                     </label class="radio">
-                    <input class="search__input search__input--hidden" type="text" placeholder="Free text search..." id="search-input"/>
+                    <input class="search__input search__input--hidden" type="text" placeholder="Free text search..."
+                        id="search-input" />
                 </div>
                 <button id="get-btn" class="form__get-btn" type="button">Get a joke</button>
             </div>
@@ -56,7 +57,7 @@
             <div id="found-jokes" class="found-jokes">
 
             </div>
-           
+
         </section>
         <!-- Favourite jokes -->
         <section class="favourite favourite--hidden" id="favourite">
@@ -73,7 +74,7 @@
     <script type="text/javascript" src="js/radioSelection.js"></script>
     <script type="text/javascript" src="js/hamburger.js"></script>
     <script type="module" src="js/getJoke.js"></script>
-   
+
 </body>
 
 </html>

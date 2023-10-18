@@ -1,11 +1,10 @@
-import {Joke} from "./Joke.js"
-$(populateCategories);
-function populateCategories(){
-    let keys = Object.keys(localStorage);
-    for(let key of keys) {
-        let joke = JSON.parse(localStorage[key])
-        joke = new Joke(joke.id, joke.value, joke.updateAt, joke.category);
+import { Joke } from "./Joke.js"
+$(populateFav);
+function populateFav() {
+    let jokesArr = localStorage.getItem("ChuckNorisJokes") ? JSON.parse(localStorage.getItem("ChuckNorisJokes")) : []
+
+    jokesArr.forEach(item => {
+        const joke = new Joke(item.id, item.value, item.updateAt, item.category);
         joke.appendJoke(true)
-    }
-       
+    })
 }
