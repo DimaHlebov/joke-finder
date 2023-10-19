@@ -4,7 +4,7 @@ Chuck Norris Joke Generator is a fun and lighthearted application that delivers 
 
 ## Demo
 
-https://norris-joke-generator.vercel.app/
+https://norrisjokegenerator.vercel.app/
 
 ## Features
 
