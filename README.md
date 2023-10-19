@@ -23,7 +23,7 @@ https://norrisjokegenerator.vercel.app/
 ## Technical details 
 
 Used technologies:
-1. **HTM** + **BEM**
+1. **HTML** + **BEM**
 2. **CSS** + **Sass**
 3. **JS** + **JQuery** + **AJAX**
 
